@@ -1,0 +1,199 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing:  border-box; /*Atributo para respeitar a medida pela borda quando é usado width com valor fixo*/
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color:rgba(255, 255, 255, 0.05);
+  --surface-color-hover:rgba(0, 0, 0, 0.02);
+  --highligh-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(assets/moon-stars.svg);
+}
+
+.light{
+  --text-color: black;
+  --bg-url: url(assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover:rgba(255, 255, 255, 0.02);
+  --highligh-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(assets/sun.svg);
+}
+
+
+body{
+  background-image: var(--bg-url); /* colocando imgem no fundo*/
+  background-repeat: no-repeat; /* não reptir varias imagem para cobrir a tela toda*/
+  background-position: top center; /* centralizar a image, no cento entre eixo x e y*/
+  background-size: cover; /*cobrir toda espaço visivel*/ 
+
+  /*Outra forma de fazer a mesma coisa menos SELETOR*/
+  /*background: url(./assets/assets/bg-mobile.jpg) no-repeat top center/cover;*/ 
+
+}
+
+body *{
+  font-family: "Inter", serif;
+  color: var(--text-color);
+}
+
+
+
+#container {
+  /*Tamanhos definido Fixo*/
+  width: 360px;
+  border: 1px solid red;
+  margin: 56px auto 0px; /*Executar como em eixo x e Y para centralizar o container no meio da tela*/
+
+  padding: 0 24px; 
+  
+}
+
+
+
+/*============== Profile ================*/
+
+/*Exemplo de centralização do elemento na tela*/
+#profile{
+  text-align: center;
+  padding: 24px;
+  border: 1px solid violet;
+}
+
+
+
+/*img é elemento inline e o mesmo não da para alterar margin auto, DIV é elemento display Block*/
+#profile img{
+  width: 112px; /*Não precisa da altura da imagem o mesmo já se ajusta*/
+  
+  /*Exemplo de centralização do elemento na tela*/
+  /*
+  display: block;
+  margin: auto;
+*/
+}
+
+/**/
+#profile p {
+  font-weight: 500; /*peso da fonte*/
+  line-height: 24px; /*altura da linha do <p>*/
+  margin-top: 8px;
+}
+
+
+/*============== Switch ================*/
+
+#switch{
+  border: 3px solid green;
+  position: relative;
+
+  width: 64px; /*Definindo o tanho total da div SWITCH*/
+  margin: 4px auto; /*definido posição dos dois elementos button e span no centro do perfil, quando usa SELETOR do css (seletores display block e position)*/
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  /*Realizando posição do absolute, elementos um em cima do outro, posição da bolinha no eixo certo*/
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background:var(--surface-color) ;
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+
+/*Links*/
+ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 24px 0;
+  border: 2px solid peru;
+}
+
+
+
+ul li a{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.2s;
+
+}
+
+ul li a:hover{
+   background: var(--surface-color-hover)
+   border: 1px solid var(--text-color);
+}
+
+
+/*======== Rede Sociais ICONS =========*/
+#social-links{
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px;
+  border: 3px solid blue;
+  
+}
+
+#social-links a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 50%;  
+}
+
+
+#social-links a:hover{
+  background: var(--highligh-color);
+}
+
+
+footer{
+  padding: 24px;
+  text-align: center;
+  border: 5px solid white;
+}
