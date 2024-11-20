@@ -111,12 +111,22 @@ body *{
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+
+  /*Animação do botão do ponto inicial que é claro*/
+  animation: slide-out 0.2s forwards;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+
+  /*Animação do botão do ponto final que é escuro*/
+  animation: slide-in 0.2s forwards;
 }
+
+  /*Colocar sobra ao passar o mouse do botão igual icons da rede sociais*/
+#switch button:hover {
+  outline: 8px solid var(--highligh-color);
+}
+
 
 #switch span {
   display: block;
@@ -212,5 +222,28 @@ footer{
 
   .light {
     --bg-url:url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+
+/*======== Animation =========*/
+
+/*Declarando o atributo slide-in para realizar deslize do fim ao final no modo escuro*/
+@keyframes slide-in {
+  from {
+    left:0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+/*Declarando o atributo slide-out para realizar deslize do fim ao final no modo inicial claro*/
+@keyframes slide-out {
+  from {
+    left:50%;
+  }
+  to {
+    left: 0;
   }
 }
