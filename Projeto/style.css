@@ -46,7 +46,8 @@ body *{
 
 #container {
   /*Tamanhos definido Fixo*/
-  width: 360px;
+  width: 100%;
+  max-width: 588px; /*Realizando o tamanho de tela ideal para mobile sem deixar desajustado*/
   border: 1px solid red;
   margin: 56px auto 0px; /*Executar como em eixo x e Y para centralizar o container no meio da tela*/
 
