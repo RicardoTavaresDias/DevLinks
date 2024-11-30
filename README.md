@@ -1,3 +1,7 @@
+<p align="center">
+  <img alt="Logo - Rocketseat" src=".github/logo.png" width="200px" />
+</p>
+
 <h1 align="center"> DevLinks </h1>
 
 <p align="center">
@@ -18,7 +22,7 @@ Programa exclusivo e gratuito, promovido pela Rocketseat para ensino de tecnolog
 <br>
 
 <p align="center">
-  <img alt="Projeto DevLinks" src="./github/preview.jpg" width="100%">
+  <img alt="Projeto DevLinks" src=".github/preview.jpg" width="100%">
 </p>
 
 ## 🚀 Tecnologias
